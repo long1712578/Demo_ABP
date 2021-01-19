@@ -1,0 +1,14 @@
+{
+    // other TS configuration...
+    "compilerOptions": {
+        // other TS configuration...
+        "paths": {
+            "@proxy": [
+                "src/app/proxy/index.ts"
+            ],
+            "@proxy/*": [
+                "src/app/proxy/*"
+            ]
+        }
+    }
+}
