@@ -24,10 +24,12 @@ export class BookComponent implements OnInit {
   constructor(public readonly list: ListService, private bookService: BookService, private fb: FormBuilder, private confirmation: ConfirmationService) { }
 
   ngOnInit() {
+    //cau lenh
     const bookStreamCreator = (query) => this.bookService.getList(query);
-
     this.list.hookToQuery(bookStreamCreator).subscribe((response) => {
+      console.log("list1", response);
       this.book = response;
+      console.log("list2", this.book);
     });
   }
   // add new method
