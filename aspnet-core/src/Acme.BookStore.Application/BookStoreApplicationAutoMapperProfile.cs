@@ -16,6 +16,7 @@ namespace Acme.BookStore
             CreateMap<Author, AuthorDto>();
             CreateMap<CreateAuthorDto, Author>();
             CreateMap<UpdateAuthorDto, Author>();
+            CreateMap<Author, AuthorLookupDto>();
         }
     }
 }
