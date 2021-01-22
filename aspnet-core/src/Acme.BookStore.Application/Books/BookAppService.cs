@@ -13,6 +13,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Acme.BookStore.Books
 {
+    
     [Authorize(BookStorePermissions.Books.Default)]
     public class BookAppService :
        CrudAppService<
@@ -24,9 +25,10 @@ namespace Acme.BookStore.Books
             IBookAppService //implement the IBookAppService
     {
         private readonly IAuthorRepository _authorRepository;
-        public BookAppService(IRepository<Book, Guid> repository)
+        public BookAppService(IRepository<Book, Guid> repository, IAuthorRepository authorRepository)
             : base(repository)
         {
+            _authorRepository = authorRepository;
             GetPolicyName = BookStorePermissions.Books.Default;
             GetListPolicyName = BookStorePermissions.Books.Default;
             CreatePolicyName = BookStorePermissions.Books.Create;
